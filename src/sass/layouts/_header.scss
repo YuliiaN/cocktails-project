@@ -91,6 +91,8 @@ button[data-burger-close] {
 
 .header__nav-item-fav {
   position: relative;
+  cursor: pointer;
+  @extend .header__nav-link;
 }
 
 .header__nav-link {
@@ -102,7 +104,7 @@ button[data-burger-close] {
 
 // header subnav
 
-.header__subnav {
+.subnav {
   position: absolute;
   opacity: 0;
   width: 240px;
@@ -113,11 +115,11 @@ button[data-burger-close] {
   transition: opacity $time $cubic;
 }
 
-.header__nav-item-fav:hover .header__subnav {
+.header__nav-item-fav:hover .subnav {
   opacity: 1;
 }
 
-.header__subnav-item {
+.subnav-item {
   padding: 12px;
   transition: background-color $time $cubic;
 
@@ -126,14 +128,14 @@ button[data-burger-close] {
   }
 }
 
-.header__subnav-link {
+.subnav-link {
   font-size: 18px;
   line-height: 1.33;
   letter-spacing: 0.02em;
   color: $primary-text-color;
   transition: color $time $cubic;
 
-  .header__subnav-item:hover & {
+  .subnav-item:hover & {
     color: $secondary-text-color;
   }
 }
@@ -392,9 +394,21 @@ input:checked + .slider:before {
 }
 
 .burger-menu__nav-item--fav {
+  position: relative;
   display: flex;
   gap: 8px;
   align-items: flex-end;
+  cursor: pointer;
+  @extend .burger-menu__nav-link;
+
+  &:hover .subnav {
+    opacity: 1;
+  }
+}
+
+.subnav {
+  position: absolute;
+  bottom: -100px;
 }
 
 .burger-menu__nav-link {
