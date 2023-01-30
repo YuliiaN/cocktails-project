@@ -1,0 +1,16 @@
+.gallery__title {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.91;
+  text-align: center;
+
+  @include mq(tab) {
+    font-size: 32px;
+    line-height: 1.31;
+  }
+
+  @include mq(desk) {
+    font-size: 48px;
+    line-height: 1.5;
+  }
+}

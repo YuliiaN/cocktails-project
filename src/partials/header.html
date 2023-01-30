@@ -1,0 +1,87 @@
+<header class="header">
+  <div class="container header__container">
+    <div class="header__logo">
+      <p class="header__logo-text">COCKTAILS</p>
+      <img src="./images/cocktail.svg" alt="" class="header__logo-icon" />
+    </div>
+
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Home</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Favorite</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header__tablet-wrapper">
+      <div class="header__search-wrapper is-open">
+        <button type="button" class="input-btn">
+          <svg class="input-icon">
+            <use href="./images/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+        <input type="text" class="header__search" placeholder="Search" />
+      </div>
+
+      <div class="header__switcher">
+        <span class="switcher__text switcher__text--light">Light</span>
+        <label class="header__switch">
+          <input type="checkbox" />
+          <span class="header__slider"></span>
+        </label>
+        <span class="switcher__text switcher__text--dark">Dark</span>
+      </div>
+
+      <button type="button" class="header__menu-btn" data-burger-open>
+        <svg class="header__menu-open-icon">
+          <use href="./images/sprite.svg#icon-menu"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="burger-menu" data-burger>
+      <div class="burger-menu__wrapper">
+        <div class="burger-menu__logo-wrapper">
+          <p class="header__logo-text burger-menu__logo">COCKTAILS</p>
+          <div class="switcher">
+            <span class="switcher__text switcher__text--light">Light</span>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+            <span class="switcher__text switcher__text--dark">Dark</span>
+          </div>
+        </div>
+        <button type="button" data-burger-close>
+          <svg class="burger-menu__close-icon">
+            <use href="./images/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="burger-menu__search-wrapper">
+        <button type="button" class="input-btn">
+          <svg class="input-icon">
+            <use href="./images/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+        <input type="text" class="burger-menu__search" placeholder="Search" />
+      </div>
+      <nav class="burger-menu__nav">
+        <ul class="burger-menu__nav-list">
+          <li class="burger-menu__nav-item">
+            <a href="#" class="burger-menu__nav-link">Home</a>
+          </li>
+          <li class="burger-menu__nav-item burger-menu__nav-item--fav">
+            <a href="#" class="burger-menu__nav-link">Favorite</a>
+            <svg class="burger-menu__nav-icon">
+              <use href="./images/sprite.svg#icon-arrow"></use>
+            </svg>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
