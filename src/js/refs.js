@@ -2,6 +2,7 @@ export const refs = {
   body: document.querySelector('.js-body'),
   form: document.querySelector('.js-form'),
   input: document.querySelector('.js-input'),
+  select: document.querySelector('.js-select'),
 
   burgerOpen: document.querySelector('button[data-burger-open]'),
   burgerMenu: document.querySelector('[data-burger]'),

@@ -1,6 +1,6 @@
 import CocktailApi from './cocktail-api';
 import { refs } from './refs';
-import renderRandomDrink from './templates/random-drink';
+import renderCardDrink from './templates/card-drink';
 
 const apiQuery = new CocktailApi();
 
@@ -20,15 +20,20 @@ async function getCertainCocktail(name) {
       notFound();
       return;
     }
-    refs.galleryNotFound.classList.toggle('is-hidden');
-    refs.gallery.innerHTML = renderRandomDrink(cocktails).join('');
+    found();
+    refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
   } catch (error) {
     console.log(error);
   }
 }
 
-function notFound() {
+export function notFound() {
   refs.galleryTitle.textContent = `Sorry, we didn't find any cocktail for you`;
   refs.gallery.innerHTML = '';
-  refs.galleryNotFound.classList.toggle('is-hidden');
+  refs.galleryNotFound.classList.remove('is-hidden');
+}
+
+export function found() {
+  refs.galleryTitle.textContent = 'Cocktails';
+  refs.galleryNotFound.classList.add('is-hidden');
 }

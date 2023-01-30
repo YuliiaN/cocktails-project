@@ -1,6 +1,6 @@
 import CocktailApi from './cocktail-api';
 import { refs } from './refs';
-import renderRandomDrink from './templates/random-drink';
+import renderCardDrink from './templates/card-drink';
 
 const apiRandom = new CocktailApi();
 createDrinksGallery();
@@ -14,7 +14,7 @@ async function createDrinksGallery() {
     }
 
     const cocktails = (await Promise.all(promises)).flat();
-    refs.gallery.innerHTML = renderRandomDrink(cocktails).join('');
+    refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
   } catch (error) {
     console.log(error);
   }

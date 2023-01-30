@@ -1,4 +1,4 @@
-export default function renderRandomDrink(arr) {
+export default function renderCardDrink(arr) {
   const collection = arr.map(({ idDrink, strDrink, strDrinkThumb }) => {
     return `
     <li class="gallery__item" id="${idDrink}">
