@@ -1,0 +1,97 @@
+.cocktail-modal {
+  display: block;
+  position: fixed;
+  padding: 40px 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $modal-bcg-color;
+  z-index: 1;
+  overflow-y: auto;
+
+  color: $select-color;
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+button[data-cocktail-modal-close] {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   border: none;
+}
+
+.cocktail-modal__btn-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.cocktail-modal__title {
+  margin-bottom: 20px;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.18;
+  color: $primary-text-color;
+}
+
+.cocktail-modal__subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.62;
+  text-transform: uppercase;
+  color: $primary-text-color;
+
+  &--first {
+    margin-bottom: 20px;
+  }
+
+  &--second {
+    margin-bottom: 8px;
+  }
+}
+
+.cocktail-modal__description {
+  margin-bottom: 32px;
+
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.cocktail-modal__picture {
+  width: 280px;
+  margin-bottom: 22px;
+}
+
+.cocktail-modal__ingredients {
+  margin-bottom: 8px;
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $primary-text-color;
+}
+
+.cocktail-modal__list {
+  margin-bottom: 32px;
+}
+
+.cocktail-modal__item {
+  font-size: 16px;
+  line-height: 1.62;
+
+  & span {
+    color: $primary-text-color;
+  }
+}

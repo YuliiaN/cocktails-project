@@ -9,6 +9,11 @@ body {
   color: $primary-text-color;
 }
 
+body.no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
 img {
   display: block;
   width: 100%;
@@ -16,6 +21,7 @@ img {
 }
 
 button {
+  padding: 0;
   cursor: pointer;
 }
 

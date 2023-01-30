@@ -194,21 +194,32 @@ input:checked + .header__slider:before {
 // burger menu
 
 .burger-menu {
-  display: none;
+  display: block;
+  position: fixed;
+  padding-top: 30px;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: $modal-bcg-color;
   z-index: 1;
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 button[data-burger-close] {
+  position: absolute;
+  top: 22px;
+  right: 20px;
   width: 32px;
   height: 32px;
 }
 
 .burger-menu__close-icon {
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
 }
 
 .burger-menu__wrapper {

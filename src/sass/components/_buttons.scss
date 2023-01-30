@@ -58,3 +58,17 @@
     width: 182px;
   }
 }
+
+.btn-add-fav {
+  width: 185px;
+  height: 48px;
+  background-color: $grapefruit-color;
+  border: none;
+  border-radius: 4px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #fcfcfc;
+}
