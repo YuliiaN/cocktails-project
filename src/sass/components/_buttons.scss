@@ -1,0 +1,60 @@
+.btn-status {
+  width: 110px;
+  height: 39px;
+  background-color: transparent;
+  border: 1px solid $grapefruit-color;
+  border-radius: 4px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.02em;
+  color: $grapefruit-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+
+  @include mq(tab) {
+    width: 123px;
+    height: 48px;
+
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  @include mq(desk) {
+    width: 141px;
+  }
+}
+
+.btn-info {
+  width: 108px;
+  height: 39px;
+  background-color: $orange-color;
+  border: none;
+  border-radius: 4px;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+
+  @include mq(tab) {
+    width: 160px;
+    height: 48px;
+
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  @include mq(desk) {
+    width: 182px;
+  }
+}

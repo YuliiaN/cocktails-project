@@ -4,4 +4,6 @@ export const refs = {
   burgerMenu: document.querySelector('[data-burger]'),
   burgerClose: document.querySelector('button[data-burger-close]'),
   headerSearch: document.querySelector('.header__search-wrapper'),
+
+  gallery: document.querySelector('.gallery__list'),
 };
