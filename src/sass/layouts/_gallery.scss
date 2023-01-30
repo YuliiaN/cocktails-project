@@ -108,9 +108,13 @@
 }
 
 .gallery__not-found {
-  display: none;
+  display: block;
   width: 280px;
   margin: 0 auto;
+
+  &.is-hidden {
+    display: none;
+  }
 
   @include mq(tab) {
     width: 345px;

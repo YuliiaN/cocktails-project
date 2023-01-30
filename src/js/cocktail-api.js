@@ -28,4 +28,15 @@ export default class CocktailApi {
       console.log(error);
     }
   }
+
+  async getCocktailDetailsById(id) {
+    try {
+      const response = await axios.get(`${BASE_URL}/lookup.php?i=${id}`);
+      const data = response.data;
+      const drinks = data.drinks;
+      return drinks;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

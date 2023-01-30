@@ -1,5 +1,5 @@
 export const refs = {
-  body: document.querySelector('js-body'),
+  body: document.querySelector('.js-body'),
   form: document.querySelector('.js-form'),
   input: document.querySelector('.js-input'),
 
@@ -12,6 +12,7 @@ export const refs = {
   cocktailModalBtnClose: document.querySelector(
     'button[data-cocktail-modal-close'
   ),
+  cocktailContent: document.querySelector('.cocktail-modal__content-wrapper'),
 
   gallery: document.querySelector('.gallery__list'),
   galleryTitle: document.querySelector('.gallery__title'),

@@ -20,6 +20,7 @@ async function getCertainCocktail(name) {
       notFound();
       return;
     }
+    refs.galleryNotFound.classList.toggle('is-hidden');
     refs.gallery.innerHTML = renderRandomDrink(cocktails).join('');
   } catch (error) {
     console.log(error);
@@ -29,5 +30,5 @@ async function getCertainCocktail(name) {
 function notFound() {
   refs.galleryTitle.textContent = `Sorry, we didn't find any cocktail for you`;
   refs.gallery.innerHTML = '';
-  refs.galleryNotFound.style.display = 'block';
+  refs.galleryNotFound.classList.toggle('is-hidden');
 }
