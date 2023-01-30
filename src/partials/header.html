@@ -17,14 +17,18 @@
     </nav>
 
     <div class="header__tablet-wrapper">
-      <div class="header__search-wrapper is-open">
-        <button type="button" class="input-btn">
+      <form class="header__search-wrapper is-open js-form">
+        <button type="submit" class="input-btn">
           <svg class="input-icon">
             <use href="./images/sprite.svg#icon-search"></use>
           </svg>
         </button>
-        <input type="text" class="header__search" placeholder="Search" />
-      </div>
+        <input
+          type="text"
+          class="header__search js-input"
+          placeholder="Search"
+        />
+      </form>
 
       <div class="header__switcher">
         <span class="switcher__text switcher__text--light">Light</span>
@@ -61,14 +65,18 @@
           </svg>
         </button>
       </div>
-      <div class="burger-menu__search-wrapper">
-        <button type="button" class="input-btn">
+      <form class="burger-menu__search-wrapper js-form">
+        <button type="submit" class="input-btn">
           <svg class="input-icon">
             <use href="./images/sprite.svg#icon-search"></use>
           </svg>
         </button>
-        <input type="text" class="burger-menu__search" placeholder="Search" />
-      </div>
+        <input
+          type="text"
+          class="burger-menu__search js-input"
+          placeholder="Search"
+        />
+      </form>
       <nav class="burger-menu__nav">
         <ul class="burger-menu__nav-list">
           <li class="burger-menu__nav-item">

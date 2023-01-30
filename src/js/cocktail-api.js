@@ -12,6 +12,16 @@ export default class CocktailApi {
     try {
       const response = await axios.get(`${BASE_URL}/random.php`);
       const data = response.data;
+      return data.drinks;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getCocktailByName(name) {
+    try {
+      const response = await axios.get(`${BASE_URL}/search.php?s=${name}`);
+      const data = response.data;
       const drinks = data.drinks;
       return drinks;
     } catch (error) {

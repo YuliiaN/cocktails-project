@@ -146,8 +146,6 @@ select {
 }
 
 .hero__picture {
-  margin-bottom: 60px;
-
   @include mq(tab) {
     width: 336px;
   }

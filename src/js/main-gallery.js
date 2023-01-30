@@ -3,19 +3,18 @@ import { refs } from './refs';
 import renderRandomDrink from './templates/random-drink';
 
 const apiRandom = new CocktailApi();
-getDrinksGallery();
+createDrinksGallery();
 
-async function getDrinksGallery() {
+async function createDrinksGallery() {
   try {
     let promises = [];
-    let drinks = [];
 
     for (let i = 0; i < 9; i++) {
       promises.push(apiRandom.getRandomCocktail());
     }
 
-    drinks = (await Promise.all(promises)).flat();
-    refs.gallery.innerHTML = renderRandomDrink(drinks).join('');
+    const cocktails = (await Promise.all(promises)).flat();
+    refs.gallery.innerHTML = renderRandomDrink(cocktails).join('');
   } catch (error) {
     console.log(error);
   }
