@@ -138,6 +138,13 @@ select {
   line-height: 1.5;
   color: $select-color;
 
+  transition: color $time $cubic, transform $time $cubic;
+
+  &:hover {
+    color: $grapefruit-color;
+    transform: scale(1.1);
+  }
+
   @include mq(desk) {
     width: 40px;
     height: 40px;

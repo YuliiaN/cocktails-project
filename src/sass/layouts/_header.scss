@@ -89,11 +89,53 @@ button[data-burger-close] {
   padding-top: 10px;
 }
 
+.header__nav-item-fav {
+  position: relative;
+}
+
 .header__nav-link {
   font-size: 18px;
   line-height: 1.33;
   letter-spacing: 0.02em;
   color: $primary-text-color;
+}
+
+// header subnav
+
+.header__subnav {
+  position: absolute;
+  opacity: 0;
+  width: 240px;
+  background-color: $modal-bcg-color;
+  border: 1px solid $grapefruit-color;
+  border-radius: 4px;
+
+  transition: opacity $time $cubic;
+}
+
+.header__nav-item-fav:hover .header__subnav {
+  opacity: 1;
+}
+
+.header__subnav-item {
+  padding: 12px;
+  transition: background-color $time $cubic;
+
+  &:hover {
+    background-color: $grapefruit-color;
+  }
+}
+
+.header__subnav-link {
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.02em;
+  color: $primary-text-color;
+  transition: color $time $cubic;
+
+  .header__subnav-item:hover & {
+    color: $secondary-text-color;
+  }
 }
 
 // header switcher
