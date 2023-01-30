@@ -15,6 +15,18 @@
   &.is-hidden {
     display: none;
   }
+
+  @include mq(tab) {
+    padding-top: 0;
+    padding-bottom: 28px;
+  }
+}
+
+.cocktail-modal__container {
+  @include mq(tab) {
+    position: relative;
+    padding: 0;
+  }
 }
 
 button[data-cocktail-modal-close] {
@@ -28,7 +40,12 @@ button[data-cocktail-modal-close] {
   display: flex;
   justify-content: center;
   align-items: center;
-  //   border: none;
+  border: none;
+
+  @include mq(tab) {
+    top: 12px;
+    right: 12px;
+  }
 }
 
 .cocktail-modal__btn-icon {
@@ -36,14 +53,28 @@ button[data-cocktail-modal-close] {
   height: 100%;
 }
 
-.cocktail-modal__title {
-  margin-bottom: 20px;
-
+.cocktail-modal__title,
+.cocktail-modal__title-tab {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 32px;
   line-height: 1.18;
   color: $primary-text-color;
+}
+
+.cocktail-modal__title {
+  @include mq(tab) {
+    display: none;
+  }
+}
+
+.cocktail-modal__title-tab {
+  margin-top: 40px;
+  margin-bottom: 28px;
+
+  @include mq(mob-only) {
+    display: none;
+  }
 }
 
 .cocktail-modal__subtitle {
@@ -53,39 +84,42 @@ button[data-cocktail-modal-close] {
   text-transform: uppercase;
   color: $primary-text-color;
 
-  &--first {
-    margin-bottom: 20px;
-  }
-
   &--second {
-    margin-bottom: 8px;
+    @include mq(tab) {
+      margin-bottom: 8px;
+    }
   }
 }
 
 .cocktail-modal__description {
-  margin-bottom: 32px;
-
   font-size: 16px;
   line-height: 1.75;
+
+  @include mq(tab) {
+    max-width: 615px;
+  }
 }
 
 .cocktail-modal__picture {
   width: 280px;
   margin: 0 auto;
   margin-bottom: 22px;
+
+  @include mq(tab) {
+    width: 288px;
+    margin: 0;
+  }
 }
 
 .cocktail-modal__ingredients {
-  margin-bottom: 8px;
-
   font-weight: 300;
   font-size: 14px;
   line-height: 1.5;
   color: $primary-text-color;
-}
 
-.cocktail-modal__list {
-  margin-bottom: 32px;
+  @include mq(tab) {
+    margin-bottom: 8px;
+  }
 }
 
 .cocktail-modal__item {
@@ -94,5 +128,55 @@ button[data-cocktail-modal-close] {
 
   & span {
     color: $primary-text-color;
+  }
+}
+
+.cocktail-modal__btn {
+  @include mq(tab) {
+    display: block;
+    margin-left: auto;
+    margin-right: 28px;
+  }
+}
+
+// geometry
+
+.cocktail-modal__content-wrapper {
+  @include mq(tab) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.first-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+
+  @include mq(tab) {
+    gap: 24px;
+    margin-left: 28px;
+    margin-bottom: 40px;
+  }
+}
+
+.second-content-wrapper {
+  margin-bottom: 32px;
+
+  @include mq(tab) {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 28px;
+  }
+}
+
+.third-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include mq(tab) {
+    gap: 0;
   }
 }
