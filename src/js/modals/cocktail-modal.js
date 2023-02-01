@@ -1,6 +1,7 @@
 import CocktailApi from '../cocktail-api';
 import { refs } from '../refs';
 import renderDetailedDrink from '../templates/detailed-drink';
+import { getFavCocktails } from '../add-local-storage';
 
 const apiModal = new CocktailApi();
 let id;
@@ -28,6 +29,10 @@ async function getCocktailDetails(id) {
   try {
     const data = await apiModal.getCocktailDetailsById(id);
     refs.cocktailContent.innerHTML = renderDetailedDrink(data[0]);
+    refs.cocktailModal.id = id;
+
+    const btn = document.querySelector('.btn-add-fav');
+    btn.addEventListener('click', getFavCocktails);
   } catch (error) {
     console.log(error);
   }

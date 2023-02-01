@@ -5,20 +5,14 @@
   border: 1px solid $grapefruit-color;
   border-radius: 4px;
 
-  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.71;
-  letter-spacing: 0.02em;
   color: $grapefruit-color;
 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 4px;
-
-  &:hover {
-    background-color: #ffffff;
-  }
 
   @include mq(tab) {
     width: 123px;
@@ -40,11 +34,9 @@
   border: none;
   border-radius: 4px;
 
-  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.71;
-  letter-spacing: 0.02em;
-  color: #ffffff;
+  color: $modal-bcg-color;
 
   @include mq(tab) {
     width: 160px;
@@ -66,9 +58,19 @@
   border: none;
   border-radius: 4px;
 
-  font-family: 'Roboto', sans-serif;
   font-size: 20px;
   line-height: 1.2;
+  color: $secondary-text-color;
+}
+
+.btn-status,
+.btn-info,
+.btn-add-fav {
+  font-family: 'Roboto', sans-serif;
   letter-spacing: 0.02em;
-  color: #fcfcfc;
+  transition: transform $time $cubic;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }

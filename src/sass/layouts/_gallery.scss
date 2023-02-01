@@ -2,6 +2,16 @@
   padding-bottom: 60px;
 }
 
+.fav-gallery {
+  padding-top: 60px;
+  padding-bottom: 120px;
+
+  @include mq(tab) {
+    padding-top: 68px;
+    padding-bottom: 60px;
+  }
+}
+
 .gallery__title {
   max-width: 280px;
   margin: 0 auto 60px auto;
@@ -24,7 +34,8 @@
   }
 }
 
-.gallery__list {
+.gallery__list,
+.fav-gallery__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -39,11 +50,15 @@
   width: 280px;
   border: 1px solid $grapefruit-color;
   border-radius: 4px;
-  transition: transform $time $cubic;
   cursor: pointer;
 
+  transition: box-shadow $time $cubic;
+
   &:hover {
-    transform: scale(1.01);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    border: none;
   }
 
   @include mq(tab) {
@@ -119,5 +134,33 @@
   @include mq(tab) {
     width: 345px;
     height: 380px;
+  }
+}
+
+.fav-gallery__not-found {
+  display: block;
+  max-width: 239px;
+  margin: 0 auto;
+
+  font-size: 20px;
+  line-height: 3;
+  color: $primary-text-color;
+  text-align: center;
+
+  &.is-hidden {
+    display: none;
+  }
+
+  @include mq(tab) {
+    max-width: 296px;
+    font-size: 24px;
+    line-height: 2.5;
+  }
+
+  @include mq(desk) {
+    max-width: 385px;
+
+    font-size: 32px;
+    line-height: 2.25;
   }
 }
