@@ -3,7 +3,7 @@ let cocktailsCollection = [];
 
 checkStorageState();
 
-export function getFavCocktails(e) {
+export default function saveFavCocktails(e) {
   if (!e.target.classList.contains('btn-ls')) {
     return;
   }
@@ -25,7 +25,7 @@ export function getFavCocktails(e) {
   }
 }
 
-export function saveToStorage() {
+function saveToStorage() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(cocktailsCollection));
 }
 

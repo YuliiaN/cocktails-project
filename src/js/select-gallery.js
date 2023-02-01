@@ -2,6 +2,7 @@ import CocktailApi from './cocktail-api';
 import { refs } from './refs';
 import renderCardDrink from './templates/card-drink';
 import { found, notFound } from './query-gallery';
+import saveFavCocktails from './add-local-storage';
 
 const apiSelect = new CocktailApi();
 
@@ -18,6 +19,11 @@ async function getSelectedOnMobile(e) {
     }
     found();
     refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
+
+    const galleryButtons = document.querySelectorAll('.gallery__buttons');
+    galleryButtons.forEach(item =>
+      item.addEventListener('click', saveFavCocktails)
+    );
   } catch (error) {
     console.log(error);
   }
@@ -33,6 +39,11 @@ async function getSelectedByButtons(e) {
     }
     found();
     refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
+
+    const galleryButtons = document.querySelectorAll('.gallery__buttons');
+    galleryButtons.forEach(item =>
+      item.addEventListener('click', saveFavCocktails)
+    );
   } catch (error) {
     console.log(error);
   }

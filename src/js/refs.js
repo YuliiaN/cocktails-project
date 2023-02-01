@@ -8,7 +8,6 @@ export const refs = {
   burgerOpen: document.querySelector('button[data-burger-open]'),
   burgerMenu: document.querySelector('[data-burger]'),
   burgerClose: document.querySelector('button[data-burger-close]'),
-  // headerSearch: document.querySelector('.header__search-wrapper'),
 
   cocktailModal: document.querySelector('[data-cocktail-modal]'),
   cocktailModalBtnClose: document.querySelector(
@@ -19,4 +18,6 @@ export const refs = {
   gallery: document.querySelector('.gallery__list'),
   galleryTitle: document.querySelector('.gallery__title'),
   galleryNotFound: document.querySelector('.gallery__not-found'),
+  favGallery: document.querySelector('.fav-gallery__list'),
+  favGalleryNotFound: document.querySelector('.fav-gallery__not-found'),
 };

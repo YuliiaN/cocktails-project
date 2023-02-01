@@ -1,7 +1,7 @@
 import CocktailApi from './cocktail-api';
 import { refs } from './refs';
 import renderCardDrink from './templates/card-drink';
-import { getFavCocktails } from './add-local-storage';
+import saveFavCocktails from './add-local-storage';
 
 const apiRandom = new CocktailApi();
 
@@ -21,7 +21,7 @@ async function createDrinksGallery() {
     // add event on button for local storage
     const galleryButtons = document.querySelectorAll('.gallery__buttons');
     galleryButtons.forEach(item =>
-      item.addEventListener('click', getFavCocktails)
+      item.addEventListener('click', saveFavCocktails)
     );
   } catch (error) {
     console.log(error);

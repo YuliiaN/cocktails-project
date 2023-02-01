@@ -6,4 +6,3 @@ import './js/query-gallery';
 import './js/modals/cocktail-modal';
 import './js/select-gallery';
 import './js/add-local-storage';
-import './js/render-local-storage';

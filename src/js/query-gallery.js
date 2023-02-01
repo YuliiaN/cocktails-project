@@ -1,6 +1,7 @@
 import CocktailApi from './cocktail-api';
 import { refs } from './refs';
 import renderCardDrink from './templates/card-drink';
+import saveFavCocktails from './add-local-storage';
 
 const apiQuery = new CocktailApi();
 
@@ -22,6 +23,11 @@ async function getCertainCocktail(name) {
     }
     found();
     refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
+
+    const galleryButtons = document.querySelectorAll('.gallery__buttons');
+    galleryButtons.forEach(item =>
+      item.addEventListener('click', saveFavCocktails)
+    );
   } catch (error) {
     console.log(error);
   }
