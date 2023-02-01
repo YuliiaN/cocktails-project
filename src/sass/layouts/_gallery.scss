@@ -117,8 +117,22 @@
 }
 
 .gallery__btn-icon {
-  width: 21px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
+
+  @include mq(tab) {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include mq(desk) {
+    width: 21px;
+    height: 19px;
+  }
+
+  &--hidden {
+    display: none;
+  }
 }
 
 .gallery__not-found {

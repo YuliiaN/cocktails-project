@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 7px;
 
   @include mq(tab) {
     width: 123px;
