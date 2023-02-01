@@ -41,6 +41,15 @@ button[data-cocktail-modal-close] {
   justify-content: center;
   align-items: center;
   border: none;
+  border-radius: 50%;
+  color: $primary-text-color;
+
+  transition: background-color $time $cubic, color $time $cubic;
+
+  &:hover {
+    background-color: $grapefruit-color;
+    color: $modal-bcg-color;
+  }
 
   @include mq(tab) {
     top: 12px;
@@ -51,6 +60,7 @@ button[data-cocktail-modal-close] {
 .cocktail-modal__btn-icon {
   width: 100%;
   height: 100%;
+  fill: currentColor;
 }
 
 .cocktail-modal__title,

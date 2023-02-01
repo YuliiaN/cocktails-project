@@ -18,6 +18,8 @@ function showCocktailModal(e) {
 
   refs.cocktailModal.classList.toggle('is-hidden');
   refs.body.classList.toggle('no-scroll');
+
+  refs.cocktailModal.addEventListener('click', hideByBackdrop);
 }
 
 function hideCocktailModal() {
@@ -36,4 +38,12 @@ async function getCocktailDetails(id) {
   } catch (error) {
     console.log(error);
   }
+}
+
+function hideByBackdrop(e) {
+  if (e.target !== refs.cocktailModal) {
+    return;
+  }
+  hideCocktailModal();
+  refs.cocktailModal.removeEventListener('click', hideByBackdrop);
 }
