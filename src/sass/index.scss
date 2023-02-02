@@ -6,11 +6,11 @@
 @import './components/container';
 @import './components/buttons';
 @import './components/input';
+@import './components/dark-theme';
 
 @import './layouts/header';
+@import './layouts/header-burger';
 @import './layouts/hero';
 @import './layouts/gallery';
 @import './layouts/footer';
 @import './layouts/cocktail-modal';
-
-@import './components/dark-theme';
