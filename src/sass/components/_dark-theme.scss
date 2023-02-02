@@ -1,0 +1,83 @@
+body.dark-theme {
+  background-color: $dark-theme-bcg;
+
+  .header__menu-btn {
+    color: $dark-theme-color;
+  }
+
+  .burger-menu {
+    background-color: $dark-theme-bcg;
+  }
+
+  button[data-burger-close] {
+    color: $dark-theme-color;
+  }
+
+  .subnav {
+    background-color: $dark-theme-bcg;
+    border-color: $dark-theme-color;
+  }
+
+  .subnav-link {
+    color: $dark-theme-color;
+
+    &:hover {
+      color: $primary-text-color;
+    }
+  }
+
+  .hero__content-text,
+  .gallery__title,
+  .gallery__item-title,
+  .fav-gallery__not-found,
+  .header__nav-link,
+  .burger-menu__nav-link {
+    color: $dark-theme-color;
+  }
+
+  .gallery__btn-icon {
+    color: $dark-theme-bcg;
+  }
+
+  .hero__content-select {
+    background-color: $dark-theme-bcg;
+
+    &:focus {
+      background-color: $grapefruit-color;
+    }
+  }
+
+  .switcher__text {
+    &--light {
+      color: $dark-theme-color;
+    }
+
+    &--dark {
+      color: $grapefruit-color;
+    }
+  }
+
+  .cocktail-modal {
+    background-color: $dark-theme-bcg;
+  }
+
+  button[data-cocktail-modal-close] {
+    color: $dark-theme-color;
+  }
+
+  .cocktail-modal__item,
+  .cocktail-modal__description {
+    color: #bdbdbd;
+  }
+
+  .cocktail-modal__title,
+  .cocktail-modal__title-tab,
+  .cocktail-modal__subtitle,
+  .cocktail-modal__item span {
+    color: $dark-theme-color;
+  }
+
+  .js-input {
+    color: $dark-theme-color;
+  }
+}

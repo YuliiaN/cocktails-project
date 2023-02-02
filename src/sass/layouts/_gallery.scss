@@ -119,6 +119,7 @@
 .gallery__btn-icon {
   width: 18px;
   height: 18px;
+  color: $modal-bcg-color;
 
   @include mq(tab) {
     width: 24px;
@@ -133,6 +134,10 @@
   &--hidden {
     display: none;
   }
+}
+
+.heart {
+  fill: currentColor;
 }
 
 .gallery__not-found {
@@ -175,5 +180,15 @@
 
     font-size: 32px;
     line-height: 2.25;
+  }
+}
+
+.gallery__btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+
+  &.is-hidden {
+    display: none;
   }
 }

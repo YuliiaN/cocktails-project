@@ -5,3 +5,4 @@ import './js/query-gallery';
 import './js/modals/cocktail-modal';
 import './js/add-local-storage';
 import './js/render-local-storage';
+import './js/change-theme';
