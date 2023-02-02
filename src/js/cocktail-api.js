@@ -6,7 +6,6 @@ export default class CocktailApi {
   constructor() {
     this.searchQuery = '';
     this.letter = '';
-    this.page = 1;
   }
 
   async getRandomCocktail() {

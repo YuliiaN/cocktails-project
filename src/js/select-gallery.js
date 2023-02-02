@@ -3,6 +3,7 @@ import { refs } from './refs';
 import renderCardDrink from './templates/card-drink';
 import { found, notFound } from './query-gallery';
 import saveFavCocktails from './add-local-storage';
+import { loading, loadingStop } from './loading';
 
 const apiSelect = new CocktailApi();
 
@@ -12,6 +13,7 @@ refs.selectButtons.addEventListener('click', getSelectedByButtons);
 async function getSelectedOnMobile(e) {
   try {
     apiSelect.letter = e.target.value;
+    loading();
     const cocktails = await apiSelect.getCocktailByLetter(apiSelect.letter);
     if (!cocktails) {
       notFound();
@@ -19,6 +21,7 @@ async function getSelectedOnMobile(e) {
     }
     found();
     refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
+    loadingStop();
 
     const galleryButtons = document.querySelectorAll('.gallery__buttons');
     galleryButtons.forEach(item =>
@@ -32,6 +35,7 @@ async function getSelectedOnMobile(e) {
 async function getSelectedByButtons(e) {
   try {
     apiSelect.letter = e.target.textContent;
+    loading();
     const cocktails = await apiSelect.getCocktailByLetter(apiSelect.letter);
     if (!cocktails) {
       notFound();
@@ -39,6 +43,7 @@ async function getSelectedByButtons(e) {
     }
     found();
     refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
+    loadingStop();
 
     const galleryButtons = document.querySelectorAll('.gallery__buttons');
     galleryButtons.forEach(item =>

@@ -2,6 +2,7 @@ import CocktailApi from './cocktail-api';
 import { refs } from './refs';
 import renderCardDrink from './templates/card-drink';
 import saveFavCocktails from './add-local-storage';
+import { loading, loadingStop } from './loading';
 
 const apiRandom = new CocktailApi();
 
@@ -15,8 +16,10 @@ async function createDrinksGallery() {
       promises.push(apiRandom.getRandomCocktail());
     }
 
+    loading();
     const cocktails = (await Promise.all(promises)).flat();
     refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
+    loadingStop();
 
     // add event on button for local storage
     const galleryButtons = document.querySelectorAll('.gallery__buttons');

@@ -1,10 +1,12 @@
 import { refs } from './refs';
+import { loading, loadingStop } from './loading';
 
 const THEME_KEY = 'dark';
 const darkThemeName = 'dark-theme';
 refs.checkbox.forEach(item => item.addEventListener('change', changeTheme));
 
 function changeTheme(e) {
+  loading();
   if (e.target.checked) {
     refs.body.classList.add(darkThemeName);
     localStorage.setItem(THEME_KEY, darkThemeName);
@@ -12,6 +14,7 @@ function changeTheme(e) {
     refs.body.classList.remove(darkThemeName);
     localStorage.removeItem(THEME_KEY);
   }
+  loadingStop();
 }
 
 saveTheme();
