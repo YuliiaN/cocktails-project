@@ -22,11 +22,11 @@ export default function saveFavCocktails(e) {
   if (cocktailsCollection.includes(cocktail)) {
     const cocktailInd = cocktailsCollection.indexOf(cocktail);
     cocktailsCollection.splice(cocktailInd, 1);
-    changeStatus(target);
+    // changeStatus(target);
     saveToStorage();
   } else {
     cocktailsCollection.push(cocktail);
-    changeStatus(target);
+    // changeStatus(target);
     saveToStorage();
   }
 }
