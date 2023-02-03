@@ -1,26 +1,32 @@
+import { refs } from './refs';
+
 export const STORAGE_KEY = 'cocktails';
+const hiddenClassName = 'gallery__btn-icon--hidden';
 let cocktailsCollection = [];
 
 checkStorageState();
 
 export default function saveFavCocktails(e) {
-  if (!e.target.classList.contains('btn-ls')) {
+  const target = e.target;
+  if (!target.classList.contains('btn-ls')) {
     return;
   }
 
   let cocktail;
-  if (e.target.classList.contains('btn-add-fav')) {
-    cocktail = e.target.closest('[data-cocktail-modal]').id;
+  if (target.classList.contains('btn-add-fav')) {
+    cocktail = target.closest('[data-cocktail-modal]').id;
   } else {
-    cocktail = e.target.closest('li').id;
+    cocktail = target.closest('li').id;
   }
 
   if (cocktailsCollection.includes(cocktail)) {
     const cocktailInd = cocktailsCollection.indexOf(cocktail);
     cocktailsCollection.splice(cocktailInd, 1);
+    changeStatus(target);
     saveToStorage();
   } else {
     cocktailsCollection.push(cocktail);
+    changeStatus(target);
     saveToStorage();
   }
 }
@@ -35,7 +41,16 @@ function checkStorageState() {
   }
 
   cocktailsCollection = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (!cocktailsCollection.length) {
+  if (!cocktailsCollection) {
     localStorage.removeItem(STORAGE_KEY);
   }
+}
+
+function changeStatus(target) {
+  // const text = target.children[0];
+  const heart = target.children[0];
+  const pressed = target.children[1];
+  heart.classList.toggle(hiddenClassName);
+  pressed.classList.toggle(hiddenClassName);
+  // text.innerHTML = 'Remove';
 }
