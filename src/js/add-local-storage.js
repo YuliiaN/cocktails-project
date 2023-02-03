@@ -1,5 +1,3 @@
-import { refs } from './refs';
-
 export const STORAGE_KEY = 'cocktails';
 const hiddenClassName = 'gallery__btn-icon--hidden';
 let cocktailsCollection = [];
@@ -15,19 +13,10 @@ export default function saveFavCocktails(e) {
   let cocktail;
   if (target.classList.contains('btn-add-fav')) {
     cocktail = target.closest('[data-cocktail-modal]').id;
+    checkCollection(cocktailsCollection, cocktail, target);
   } else {
     cocktail = target.closest('li').id;
-  }
-
-  if (cocktailsCollection.includes(cocktail)) {
-    const cocktailInd = cocktailsCollection.indexOf(cocktail);
-    cocktailsCollection.splice(cocktailInd, 1);
-    // changeStatus(target);
-    saveToStorage();
-  } else {
-    cocktailsCollection.push(cocktail);
-    // changeStatus(target);
-    saveToStorage();
+    checkCollection(cocktailsCollection, cocktail);
   }
 }
 
@@ -46,11 +35,24 @@ function checkStorageState() {
   }
 }
 
-function changeStatus(target) {
-  // const text = target.children[0];
-  const heart = target.children[0];
-  const pressed = target.children[1];
-  heart.classList.toggle(hiddenClassName);
-  pressed.classList.toggle(hiddenClassName);
-  // text.innerHTML = 'Remove';
+function checkCollection(arr, elem, button) {
+  if (arr.includes(elem)) {
+    const cocktailInd = arr.indexOf(elem);
+    arr.splice(cocktailInd, 1);
+    button.textContent = 'Add to favorite';
+    saveToStorage();
+  } else {
+    arr.push(elem);
+    button.textContent = 'Remove from favorite';
+    saveToStorage();
+  }
 }
+
+// function changeStatus(target) {
+//   const text = target.children[0];
+//   const heart = target.children[1];
+//   const pressed = target.children[2];
+//   heart.classList.toggle(hiddenClassName);
+//   pressed.classList.toggle(hiddenClassName);
+//   text.innerHTML = 'Remove';
+// }

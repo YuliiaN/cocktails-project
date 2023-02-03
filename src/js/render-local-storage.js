@@ -9,7 +9,9 @@ const apiStorage = new CocktailApi();
 let cocktails = [];
 
 if (!localStorage.getItem(STORAGE_KEY)) {
+  loading();
   refs.favGalleryNotFound.classList.remove('is-hidden');
+  loadingStop();
   return;
 }
 
