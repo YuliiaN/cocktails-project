@@ -1,6 +1,6 @@
 export const refs = {
   body: document.querySelector('.js-body'),
-  form: document.querySelector('.js-form'),
+  form: document.querySelectorAll('.js-form'),
   input: document.querySelector('.js-input'),
   select: document.querySelector('.js-select'),
   selectButtons: document.querySelector('.js-select-buttons'),

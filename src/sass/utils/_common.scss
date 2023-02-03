@@ -2,9 +2,13 @@
 
 html {
   box-sizing: border-box;
+  height: 100vh;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   font-family: 'Poppins', sans-serif;
   color: $primary-text-color;
 }
@@ -27,4 +31,8 @@ button {
 
 a {
   text-decoration: none;
+}
+
+.wrapper {
+  flex: 1 0 auto;
 }
