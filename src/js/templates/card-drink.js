@@ -1,6 +1,6 @@
 export default function renderCardDrink(arr) {
-  const heart = '/sprite.f14d31f7.svg#icon-heart';
-  const pressed = '/sprite.f14d31f7.svg#icon-heart-pressed';
+  const heart = './sprite.f14d31f7.svg#icon-heart';
+  const pressed = './sprite.f14d31f7.svg#icon-heart-pressed';
 
   const collection = arr.map(({ idDrink, strDrink, strDrinkThumb }) => {
     return `
