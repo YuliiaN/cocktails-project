@@ -16,8 +16,10 @@ function onChangeGetName(e) {
     getCertainCocktail(input.value);
   } else {
     const mobInput = document.querySelector('.burger-menu__search');
+    loading();
     getCertainCocktail(mobInput.value);
     hideBurgerMenu();
+    loadingStop();
   }
   e.currentTarget.reset();
 }
@@ -26,11 +28,13 @@ async function getCertainCocktail(name) {
   try {
     loading();
     const cocktails = await apiQuery.getCocktailByName(name);
+
     if (!cocktails) {
       notFound();
       loadingStop();
       return;
     }
+
     found();
     refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
     loadingStop();

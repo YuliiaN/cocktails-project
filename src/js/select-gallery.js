@@ -17,6 +17,7 @@ async function getSelectedOnMobile(e) {
     const cocktails = await apiSelect.getCocktailByLetter(apiSelect.letter);
     if (!cocktails) {
       notFound();
+      loadingStop();
       return;
     }
     found();
@@ -39,6 +40,7 @@ async function getSelectedByButtons(e) {
     const cocktails = await apiSelect.getCocktailByLetter(apiSelect.letter);
     if (!cocktails) {
       notFound();
+      loadingStop();
       return;
     }
     found();
