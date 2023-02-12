@@ -50,7 +50,7 @@ function hideByBackdrop(e) {
   refs.cocktailModal.removeEventListener('click', hideByBackdrop);
 }
 
-function checkBtnStatus(id, button) {
+export function checkBtnStatus(id, button) {
   if (!localStorage.getItem(STORAGE_KEY)) {
     return;
   }

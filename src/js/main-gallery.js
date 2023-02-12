@@ -23,9 +23,9 @@ async function createDrinksGallery() {
 
     // add event on button for local storage
     const galleryButtons = document.querySelectorAll('.gallery__buttons');
-    galleryButtons.forEach(item =>
-      item.addEventListener('click', saveFavCocktails)
-    );
+    galleryButtons.forEach(card => {
+      card.addEventListener('click', saveFavCocktails);
+    });
   } catch (error) {
     console.log(error);
   }
