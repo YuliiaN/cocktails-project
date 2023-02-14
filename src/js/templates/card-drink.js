@@ -11,9 +11,11 @@ export default function renderCardDrink(arr) {
       Learn More
     </button>
     <button type="button" class="btn-status btn-ls">
-      Add to <svg class="gallery__btn-icon heart">
-  <use href="${heart}#icon-heart"></use>
-</svg>
+      Add to
+      <svg class="gallery__btn-icon heart">
+        <use href="${heart}#icon-heart" class="heart-icon">
+</use>
+      </svg>
     </button>
   </div>
 </li>`;

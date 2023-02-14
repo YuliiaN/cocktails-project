@@ -130,10 +130,6 @@
     width: 21px;
     height: 19px;
   }
-
-  &--hidden {
-    display: none;
-  }
 }
 
 .heart {
@@ -180,15 +176,5 @@
 
     font-size: 32px;
     line-height: 2.25;
-  }
-}
-
-.gallery__btn {
-  display: block;
-  margin: 0 auto;
-  margin-top: 30px;
-
-  &.is-hidden {
-    display: none;
   }
 }

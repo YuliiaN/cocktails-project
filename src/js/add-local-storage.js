@@ -1,7 +1,14 @@
 import { Notify } from 'notiflix';
+import heart from '../images/sprite.svg';
 
 export const STORAGE_KEY = 'cocktails';
 let cocktailsCollection = [];
+export const buttonUnlike = `Remove <svg class="gallery__btn-icon heart">
+<use href="${heart}#icon-heart-pressed" class="heart-icon"></use>
+</svg>`;
+export const buttonLike = `Add to <svg class="gallery__btn-icon heart">
+<use href="${heart}#icon-heart" class="heart-icon"></use></svg>
+</svg>`;
 
 checkStorageState();
 
@@ -44,6 +51,7 @@ function checkCollection(arr, elem, button) {
     if (button.classList.contains('btn-add-fav')) {
       button.textContent = 'Add to favorite';
     } else {
+      button.innerHTML = buttonLike;
       Notify.failure(`You have removed cocktail from favorite`);
     }
     saveToStorage();
@@ -52,6 +60,7 @@ function checkCollection(arr, elem, button) {
     if (button.classList.contains('btn-add-fav')) {
       button.textContent = 'Remove from favorite';
     } else {
+      button.innerHTML = buttonUnlike;
       Notify.success(`You have added cocktail to favorite!`);
     }
     saveToStorage();
