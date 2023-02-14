@@ -1,9 +1,6 @@
-import '../../images/heart.svg';
+import heart from '../../images/sprite.svg';
 
 export default function renderCardDrink(arr) {
-  const heart = '../../sprite.f14d31f7.svg#icon-heart';
-  // const pressed = './sprite.f14d31f7.svg#icon-heart-pressed';
-
   const collection = arr.map(({ idDrink, strDrink, strDrinkThumb }) => {
     return `
     <li class="gallery__item" id="${idDrink}">
@@ -15,8 +12,8 @@ export default function renderCardDrink(arr) {
     </button>
     <button type="button" class="btn-status btn-ls">
       Add to <svg class="gallery__btn-icon heart">
-        <use href="${heart}"></use>
-      </svg>
+  <use href="${heart}#icon-heart"></use>
+</svg>
     </button>
   </div>
 </li>`;
