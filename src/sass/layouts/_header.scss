@@ -106,41 +106,41 @@ button[data-burger-close] {
 
 // header subnav
 
-.subnav {
-  position: absolute;
-  opacity: 0;
-  width: 240px;
-  background-color: $modal-bcg-color;
-  border: 1px solid $grapefruit-color;
-  border-radius: 4px;
+// .subnav {
+//   position: absolute;
+//   opacity: 0;
+//   width: 240px;
+//   background-color: $modal-bcg-color;
+//   border: 1px solid $grapefruit-color;
+//   border-radius: 4px;
 
-  transition: opacity $time $cubic;
-}
+//   transition: opacity $time $cubic;
+// }
 
-.header__nav-item-fav:hover .subnav {
-  opacity: 1;
-}
+// .header__nav-item-fav:hover .subnav {
+//   opacity: 1;
+// }
 
-.subnav-item {
-  padding: 12px;
-  transition: background-color $time $cubic;
+// .subnav-item {
+//   padding: 12px;
+//   transition: background-color $time $cubic;
 
-  &:hover {
-    background-color: $grapefruit-color;
-  }
-}
+//   &:hover {
+//     background-color: $grapefruit-color;
+//   }
+// }
 
-.subnav-link {
-  font-size: 18px;
-  line-height: 1.33;
-  letter-spacing: 0.02em;
-  color: $primary-text-color;
-  transition: color $time $cubic;
+// .subnav-link {
+//   font-size: 18px;
+//   line-height: 1.33;
+//   letter-spacing: 0.02em;
+//   color: $primary-text-color;
+//   transition: color $time $cubic;
 
-  .subnav-item:hover & {
-    color: $secondary-text-color;
-  }
-}
+//   .subnav-item:hover & {
+//     color: $secondary-text-color;
+//   }
+// }
 
 // header switcher
 
