@@ -50,19 +50,35 @@ function checkCollection(arr, elem, button) {
     arr.splice(cocktailInd, 1);
     if (button.classList.contains('btn-add-fav')) {
       button.textContent = 'Add to favorite';
+      failureNotification();
     } else {
       button.innerHTML = buttonLike;
-      Notify.failure(`You have removed cocktail from favorite`);
+      failureNotification();
     }
     saveToStorage();
   } else {
     arr.push(elem);
     if (button.classList.contains('btn-add-fav')) {
       button.textContent = 'Remove from favorite';
+      successNotification();
     } else {
       button.innerHTML = buttonUnlike;
-      Notify.success(`You have added cocktail to favorite!`);
+      successNotification();
     }
     saveToStorage();
   }
+}
+
+function failureNotification() {
+  Notify.failure(`You have removed cocktail from favorite`, {
+    timeout: 2000,
+    clickToClose: true,
+  });
+}
+
+function successNotification() {
+  Notify.success(`You have added cocktail to favorite!`, {
+    timeout: 2000,
+    clickToClose: true,
+  });
 }
