@@ -4,6 +4,9 @@ import { buttonLike, buttonUnlike } from '../add-local-storage';
 
 export default function renderCardDrink(arr) {
   const savedCocktails = JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? [];
+  if (!savedCocktails) {
+    return;
+  }
 
   const collection = arr.map(({ idDrink, strDrink, strDrinkThumb }) => {
     if (savedCocktails.includes(idDrink)) {
