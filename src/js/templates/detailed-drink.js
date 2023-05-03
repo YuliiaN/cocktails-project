@@ -1,22 +1,13 @@
-export default function renderDetailedDrink({
-  strDrink,
-  strInstructions,
-  strDrinkThumb,
-  strIngredient1,
-  strIngredient2,
-  strIngredient3,
-  strIngredient4,
-  strIngredient5,
-}) {
-  const empty = 'no ingredients anymore';
-  if (!strIngredient3) {
-    strIngredient3 = empty;
-  }
-  if (!strIngredient4) {
-    strIngredient4 = empty;
-  }
-  if (!strIngredient5) {
-    strIngredient5 = empty;
+export default function renderDetailedDrink(obj) {
+  const { strDrink, strInstructions, strDrinkThumb } = obj;
+  let ingredientsList = '';
+
+  for (let ingredient in obj) {
+    if (obj.hasOwnProperty(ingredient)) {
+      if (ingredient.includes('strIngredient') && obj[ingredient]) {
+        ingredientsList += `<li class="cocktail-modal__item"><span>✶</span> ${obj[ingredient]}</li>`;
+      }
+    }
   }
 
   return `
@@ -38,11 +29,7 @@ export default function renderDetailedDrink({
           </h3>
           <p class="cocktail-modal__ingredients">Per cocktail</p>
           <ul class="cocktail-modal__list">
-            <li class="cocktail-modal__item"><span>✶</span> ${strIngredient1}</li>
-            <li class="cocktail-modal__item"><span>✶</span> ${strIngredient2}</li>
-            <li class="cocktail-modal__item"><span>✶</span> ${strIngredient3}</li>
-            <li class="cocktail-modal__item"><span>✶</span> ${strIngredient4}</li>
-            <li class="cocktail-modal__item"><span>✶</span> ${strIngredient5}</li>
+${ingredientsList}
           </ul>
         </div>
       </div>

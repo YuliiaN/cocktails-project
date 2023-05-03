@@ -21,7 +21,6 @@ async function createDrinksGallery() {
     refs.gallery.innerHTML = renderCardDrink(cocktails).join('');
     loadingStop();
 
-    // add event on button for local storage
     const galleryButtons = document.querySelectorAll('.gallery__buttons');
     galleryButtons.forEach(card => {
       card.addEventListener('click', saveFavCocktails);

@@ -3,7 +3,6 @@ import { refs } from '../refs';
 import renderDetailedDrink from '../templates/detailed-drink';
 import saveFavCocktails from '../add-local-storage';
 import { STORAGE_KEY } from '../add-local-storage';
-import { Notify } from 'notiflix';
 
 const apiModal = new CocktailApi();
 let id;

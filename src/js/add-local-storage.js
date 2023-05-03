@@ -3,6 +3,7 @@ import heart from '../images/sprite.svg';
 
 export const STORAGE_KEY = 'cocktails';
 let cocktailsCollection = [];
+
 export const buttonUnlike = `Remove <svg class="gallery__btn-icon heart">
 <use href="${heart}#icon-heart-pressed" class="heart-icon"></use>
 </svg>`;
@@ -34,51 +35,53 @@ function saveToStorage() {
 }
 
 function checkStorageState() {
-  if (!localStorage.length) {
-    return;
+  const storedCollection = localStorage.getItem(STORAGE_KEY);
+
+  if (storedCollection) {
+    cocktailsCollection = JSON.parse(localStorage.getItem(STORAGE_KEY));
   }
 
-  cocktailsCollection = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (!cocktailsCollection) {
+  if (!cocktailsCollection.length) {
     localStorage.removeItem(STORAGE_KEY);
   }
 }
 
 function checkCollection(arr, elem, button) {
-  if (arr.includes(elem)) {
-    const cocktailInd = arr.indexOf(elem);
+  const cocktailInd = arr.indexOf(elem);
+
+  if (cocktailInd > -1) {
     arr.splice(cocktailInd, 1);
-    if (button.classList.contains('btn-add-fav')) {
-      button.textContent = 'Add to favorite';
-      failureNotification();
-    } else {
-      button.innerHTML = buttonLike;
-      failureNotification();
+    button.innerHTML = button.classList.contains('btn-add-fav')
+      ? 'Add to favorite'
+      : buttonLike;
+    failureNotification();
+
+    const cocktail = document.getElementById(elem);
+    console.log(elem);
+    if (cocktail) {
+      cocktail.remove();
     }
-    saveToStorage();
   } else {
     arr.push(elem);
-    if (button.classList.contains('btn-add-fav')) {
-      button.textContent = 'Remove from favorite';
-      successNotification();
-    } else {
-      button.innerHTML = buttonUnlike;
-      successNotification();
-    }
-    saveToStorage();
+    button.innerHTML = button.classList.contains('btn-add-fav')
+      ? 'Remove from favorite'
+      : buttonUnlike;
+    successNotification();
   }
+
+  saveToStorage();
 }
 
 function failureNotification() {
   Notify.failure(`You have removed cocktail from favorite`, {
-    timeout: 2000,
+    timeout: 700,
     clickToClose: true,
   });
 }
 
 function successNotification() {
   Notify.success(`You have added cocktail to favorite!`, {
-    timeout: 2000,
+    timeout: 700,
     clickToClose: true,
   });
 }
